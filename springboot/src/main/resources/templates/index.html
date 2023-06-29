@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="https://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BootCamp Spring</title>
+    <link rel="stylesheet" th:href="@{/css/Style.css}">
+</head>
+<body>
+    
+    <div class="container">
+        <p th:text="${msn}"></p>
+        <br>
+        <div class="content1">
+            <div class="row">
+                <img th:src="@{/img/simbolo_nequi.jpeg}" alt="Símbolo de nequi" class="img1">
+                <a href="#" class="div_button">Inicio</a>
+                <a href="#" class="div_button">Consultar saldo</a>
+                <a href="#" class="div_button">Recargar dinero</a>
+                <a href="#" class="div_button">Enviar dinero</a>
+            </div>
+        </div>
+            
+        <div class="box1">
+            <div class="title">Quienes somos: </div>
+            <br>
+            <div class="content">
+                <div class="words1">
+                    Es una línea de negocio de Bancolombia S.A y plataforma financiera 100% digital. Actualmente 
+                    cuenta con más de 11'600.000 de usuarios en Colombia y cerca de 257.000 en Panamá.
+                    Su propósito es que las personas tengan una mejor relación con su plata, empeorándolas
+                    para que logren lo que quieren con ella. <br>
+                    A través de la aplicación los usuarios pueden manejar la plata desde el celular, 
+                    sin costos o comisiones. Tienen la posibilidad de enviar, pedir, organizar y ahorrar su plata, de una forma fácil, rápida y segura. 
+                    Además, cuentan con el Armario, espacio en el que hay múltiples servicios de recarga, pago y suscripción, y donde cada vez hay más opciones y alianzas.
+                    Nequi tiene fuertes protocolos de seguridad y busca construir 
+                    desde la experiencia del usuario, para poner la tecnología al servicio de su vida financiera.
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+    </div>
+</body>
+</html>
