@@ -9,15 +9,15 @@
 <body>
     
     <div class="container">
-        <p th:text="${msn}"></p>
+        <!-- <p th:text="${msn}"></p> -->
         <br>
         <div class="content1">
             <div class="row">
                 <img th:src="@{/img/simbolo_nequi.jpeg}" alt="Símbolo de nequi" class="img1">
-                <a href="#" class="div_button">Inicio</a>
-                <a href="#" class="div_button">Consultar saldo</a>
+                <a href="#" class="div_button" th:href="@{/index}">Inicio</a>
+                <a href="#" class="div_button" >Consultar saldo</a>
                 <a href="#" class="div_button">Recargar dinero</a>
-                <a href="#" class="div_button">Enviar dinero</a>
+                <a href="#" class="div_button" th:href="@{/enviardinero}">Enviar dinero</a>
             </div>
         </div>
             

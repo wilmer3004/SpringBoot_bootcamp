@@ -57,3 +57,21 @@
     color: white;
     font-size: 24px;
 }
+.words3{
+    color: white;
+    font-size: 21px;
+}
+.div_button1 {
+    width :100px !important;
+    height: 50px !important;
+    background-color: white !important;
+    margin-left: 10px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: black !important;
+    font-size: 18px !important;
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+    text-shadow:  10px black ;
+    
+}

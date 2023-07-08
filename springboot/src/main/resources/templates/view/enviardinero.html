@@ -15,31 +15,61 @@
 <body>
     
     <div class="container">
-        <p th:text="${msn}"></p>
         <br>
         <div class="content1">
             <div class="row">
                 <img th:src="@{/img/simbolo_nequi.jpeg}" alt="Símbolo de nequi" class="img1">
-                <a href="#" class="div_button">Inicio</a>
+                <a href="#" class="div_button" th:href="@{/index}">Inicio</a>
             </div>
         </div>
             
         <div class="box1">
             <div class="title">Datos: </div>
             <br>
-            <div class="content">
-                <div class="words2">
-                    <p th:text="${enviarD.id}"></p>
-                    <br>
-                    <p th:text="${enviarD.saldo}"></p>
-                    <br>
-                    <p th:text="${enviarD.valorDinero}"></p>
-                    <br>
-                    <p th:text="${enviarD.enviarDinero}"></p>
-                    <br>
-                    <span class="badge bg-success active" th:if="${enviarD.estado==true}">Activo</span>
-                    <span class="badge bg-danger active" th:if="${enviarD.estado==false}">Inactivo</span>
-                </div>
+            <div class="content words3">
+                    <table id="datat">
+                        <thead>
+                        <th>Id</th>
+                        <th>Saldo</th>
+                        <th>Valor del dinero</th>
+                        <th>Enviar dinero</th>
+                        <th>Estado</th>
+                        <th colspan="2">Acciones</th>
+                        </thead>
+                        <tbody>
+
+                            <tr th:if="${enviarD.size()>0}" th:each="c:${enviarD}">
+                            <td th:text="${c.id}"></td>
+                            <td th:text="${c.saldo}"></td>
+                            <td th:text="${c.valorDinero}"></td>
+                            <td th:text="${c.valorDinero}"></td>
+                            <td th:text="${c.enviarDinero}"></td>
+                            <td th:if="${c.estado==true}">
+                            <span class="badge bg-success active">Activo</span>
+                            </td>
+                            <td th:if="${c.estado==false}">
+                            <span class="badge bg-danger active">Inactivo</span>
+                            </td>
+                            <td th:if="${c.estado==true}">
+                            <a rol="button" class="btn btn-danger btn-sm"> Inactivar </a>
+                            </td>
+                            <td th:if="${c.estado==false}">
+                            <a rol="button" class="btn btn-success btn-sm"> Activar </a>
+                            </td>
+                            <td>
+                                <a rol="button"
+                                class="btn btn-warning btn-sm"
+                                th:href="@{/view/ver/}+${c.id}">
+                                <i class="bi bi-pencil"></i>
+                                </a>
+                            <a rol="button"
+                            class="btn btn-danger btn-sm">
+                            <i class="bi bi-trash"></i>
+                            </a>
+                            </td>
+                            </tr>
+                            </tbody>
+                        </table>
             </div>
         </div>
         <br>
