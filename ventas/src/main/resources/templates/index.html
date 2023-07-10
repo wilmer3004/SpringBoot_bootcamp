@@ -13,11 +13,8 @@
 </head>
 <body>
     <div class="container">
-        <div>
-            <img th:src="/img" alt="logo">
-<h1 class="title1 conten-1">Ventas de repuestos en linea</h1>
-            <br>
-            <div class="div-row">
+            <div class="div-row nav1">
+                <img th:src="@{/img/logo.png}" class="logo">
                 <a rol="button" class="btn btn-sm button2" 
                 th:href="@{/cliente/verc}">
                     Listar Clientes
@@ -27,7 +24,28 @@
                     Registrar Clientes
                 </a>
                 </div>  
-        </div>
+
+                    <h1 class="title2 ">Ventas de repuestos en linea</h1>
+                    <br>
+                    <br>
+                <div class="row">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-4">
+                        <h1 class="subtitle">¿Quienes somos?</h1>
+                        <h2 class="word2">
+                            Somos una empresa que, como principal objetivo busca la mayor comodidad del cliente,
+                            en la atención que se le sea brindada en el momento que se le ofrezcan nuestros
+                            servicios.
+                        </h2>
+                    </div>
+                    <div class="col-md-2"></div>
+                    <div class="col-md-4">
+                    <img th:src="@{/img/logo.png}" class="logo1">
+                    </div>
+                    <div class="col-md-1"></div>
+                    </div>
+
+                </div>
     </div>
     
 </body>

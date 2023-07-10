@@ -13,14 +13,17 @@
     
 </head>
 <body>
-    <br>
-    <a rol="button" class="btn btn-sm button2" 
-    th:href="@{/index}">
-       Inicio
-    </a>
-    <br>
+
     <div class="container-fluid">
-        <h1>Listado Clientes</h1>
+        <div class="nav1">
+            <img th:src="@{/img/logo.png}" class="logo">
+            <a rol="button" class="btn btn-sm button2" 
+            th:href="@{/index}">
+                Inicio  
+            </a>
+            <br>
+        </div>
+        <h1 class="title1">Listado Clientes</h1>
         <table id="datat">
             <thead>
                 <th>Id</th>

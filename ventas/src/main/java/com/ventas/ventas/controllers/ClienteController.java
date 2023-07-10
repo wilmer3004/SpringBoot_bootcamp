@@ -1,5 +1,7 @@
 package com.ventas.ventas.controllers;
 
+import java.util.Optional;
+
 // import java.util.ArrayList;
 // import java.util.List;
 
@@ -47,9 +49,9 @@ public class ClienteController {
         }
     @GetMapping(value="/cliente/form2/{id}")
         public String ver2(@PathVariable int id,Model m  ) {
-            Cliente cliente=null;
+            Optional<Cliente> cliente=null;
             if(id>0){
-                cliente=cliented.findOne(id);
+                cliente=cliented.findById(id);
             }
             else{
                 return "redirect:/cliente/verc";
@@ -71,7 +73,7 @@ public class ClienteController {
     @GetMapping("/cliente/delete/{id}")
     public String delete(@PathVariable Integer id){
         if(id>0){
-            cliented.delete(id);
+            cliented.deleteById(id);
         }
         return "redirect:/cliente/verc";
     }

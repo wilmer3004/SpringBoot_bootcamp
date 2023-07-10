@@ -14,44 +14,52 @@
     <title>Registrar Usuario</title>
 </head>
 <body>
-    <br>
-    <a rol="button" class="btn btn-sm button2" 
-    th:href="@{/index}">
-       Inicio
-    </a>
-    <br>
-    <div class="container-fluid">
-        <div class="title1" th:text="${accion}"></div>
+    <div class="container">
+        
+        <div class="title1 content-title" th:text="${accion}"></div>
+        <br>
         <form th:action="@{/add}" th:object="${cliente}" method="post" style="width: 35rem;" class="mx-auto"> 
             
             
             <div class="form-group">
-                <label for="nombre">Nombre</label>
+                <label for="nombre" class="word1">Nombre</label>
+                <br>
                 <input type="text" class="form-control" id="nombre" th:field="*{nombre}">
                 <div class="form-text text-danger" th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}"></div>
             </div>
+            <br>
             <div class="form-group">
-                <label for="apellido">Apellido</label>
+                <label for="apellido" class="word1">Apellido</label>
+                <br>
                 <input type="text" class="form-control" id="apellido" th:field="*{apellido}">
                 <div class="form-text text-danger" th:if="${#fields.hasErrors('apellido')}" th:errors="*{apellido}"></div>
             </div>
+            <br>
             <div class="form-group">
-                <label for="email">Email</label>
+                <label for="email" class="word1">Email</label>
                 <input type="text" class="form-control" id="email" th:field="*{email}">
                 <div class="form-text text-danger" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
             </div>
+            <br>
             <div class="form-group">
-                <label for="telefono">Teléfono</label>
+                <label for="telefono" class="word1">Teléfono</label>
                 <input type="text" class="form-control" id="telefono" th:field="*{telefono}">
                 <div class="form-text text-danger" th:if="${#fields.hasErrors('telefono')}" th:errors="*{telefono}"></div>
             </div>
+            <br>
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" id="estado" checked th:field="*{estado}">
-                <label class="form-check-label" for="estado">Activo</label>
+                <label class="form-check-label word1" for="estado" >Activo</label>
             </div>
-            <div>
-                <button type="submit" class="btn btn-primary">Guardar</button>
+            <br>
+            <div class="div-row" style="margin-left:0% !important;">
+                <button type="submit" class="btn btn-primary button2" style="margin-left:0% !important;">Guardar</button>
+                <a rol="button " class="btn btn-sm btn-primary button2" 
+            th:href="@{/index}">
+                Inicio  
+            </a>
             </div>
+            
         </form>        
     </div>
     

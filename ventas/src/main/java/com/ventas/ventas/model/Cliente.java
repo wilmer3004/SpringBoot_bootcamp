@@ -77,6 +77,9 @@ public class Cliente {
     public void setEstado(Boolean estado) {
         this.estado = estado;
     }
+    public Cliente orElse(Object object) {
+        return null;
+    }
    
 
 }
