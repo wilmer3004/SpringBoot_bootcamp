@@ -21,7 +21,7 @@
     </a>
     <br>
     <div class="container-fluid">
-        <div class="title1">Registrar Usuarios</div>
+        <div class="title1" th:text="${accion}"></div>
         <form th:action="@{/add}" th:object="${cliente}" method="post" style="width: 35rem;" class="mx-auto"> 
             
             
