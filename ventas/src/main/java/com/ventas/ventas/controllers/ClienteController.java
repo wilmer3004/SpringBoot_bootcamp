@@ -56,7 +56,6 @@ public class ClienteController {
             else{
                 return "redirect:/cliente/verc";
             }
-            m.addAttribute("id1", id);
             m.addAttribute("cliente", cliente);
             m.addAttribute("accion", "Actualizar Cliente");
             return ("view/form");
