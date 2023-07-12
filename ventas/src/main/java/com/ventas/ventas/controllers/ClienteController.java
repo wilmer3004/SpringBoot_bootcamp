@@ -1,7 +1,5 @@
 package com.ventas.ventas.controllers;
 
-import java.util.Optional;
-
 // import java.util.ArrayList;
 // import java.util.List;
 
@@ -18,8 +16,9 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
 import com.ventas.ventas.model.Cliente;
-import com.ventas.ventas.model.ICliente;
+// import com.ventas.ventas.model.ICliente;
 // import org.springframework.web.bind.annotation.RequestParam;
+import com.ventas.ventas.service.IClienteService;
 
 
 
@@ -28,7 +27,7 @@ import com.ventas.ventas.model.ICliente;
 @SessionAttributes("cliente")
 public class ClienteController {
     @Autowired
-    private ICliente cliented;
+    private IClienteService cliented;
 
     @GetMapping("/cliente/verc")
     public String verc(Model m) {
@@ -49,9 +48,9 @@ public class ClienteController {
         }
     @GetMapping(value="/cliente/form2/{id}")
         public String ver2(@PathVariable int id,Model m  ) {
-            Optional<Cliente> cliente=null;
+            Cliente cliente=null;
             if(id>0){
-                cliente=cliented.findById(id);
+                cliente=cliented.findOne(id);
             }
             else{
                 return "redirect:/cliente/verc";
@@ -72,7 +71,7 @@ public class ClienteController {
     @GetMapping("/cliente/delete/{id}")
     public String delete(@PathVariable Integer id){
         if(id>0){
-            cliented.deleteById(id);
+            cliented.delete(id);
         }
         return "redirect:/cliente/verc";
     }
