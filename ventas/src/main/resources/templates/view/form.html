@@ -15,7 +15,14 @@
 </head>
 <body>
     <div class="container">
-        
+        <div class="div-row nav1">
+            <img th:src="@{/img/logo.png}" class="logo">
+            <a rol="button" class="btn btn-sm button2" 
+            th:href="@{/cliente/verc}">
+                Registrar nuevo vehículo
+            </a>
+            </div>  
+
         <div class="title1 content-title" th:text="${accion}"></div>
         <br>
         <form th:action="@{/add}" th:object="${cliente}" method="post" style="width: 35rem;" class="mx-auto"> 
