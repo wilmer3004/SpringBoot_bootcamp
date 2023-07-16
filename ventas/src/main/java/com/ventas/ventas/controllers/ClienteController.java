@@ -1,5 +1,7 @@
 package com.ventas.ventas.controllers;
 
+import java.util.List;
+
 // import java.util.ArrayList;
 // import java.util.List;
 
@@ -16,9 +18,11 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
 import com.ventas.ventas.model.Cliente;
+import com.ventas.ventas.model.TipoDocumento;
 // import com.ventas.ventas.model.ICliente;
 // import org.springframework.web.bind.annotation.RequestParam;
 import com.ventas.ventas.service.IClienteService;
+import com.ventas.ventas.service.ITipoDocService;
 
 
 
@@ -28,6 +32,8 @@ import com.ventas.ventas.service.IClienteService;
 public class ClienteController {
     @Autowired
     private IClienteService cliented;
+    @Autowired
+    private ITipoDocService tipodoc;
 
     @GetMapping("/cliente/verc")
     public String verc(Model m) {
@@ -42,7 +48,9 @@ public class ClienteController {
     @GetMapping("/cliente/form")
     public String form(Model m){
         Cliente cliente = new Cliente();
+        List<TipoDocumento> listatd = tipodoc.findAll();
         m.addAttribute("cliente",cliente);
+        m.addAttribute("tiposdoc", listatd);
         m.addAttribute("accion", "Registrar Cliente");
         return "view/form";
         }
@@ -55,7 +63,9 @@ public class ClienteController {
             else{
                 return "redirect:/cliente/verc";
             }
+            List<TipoDocumento> listatd = tipodoc.findAll();
             m.addAttribute("cliente", cliente);
+            m.addAttribute("tiposdoc", listatd);
             m.addAttribute("accion", "Actualizar Cliente");
             return ("view/form");
         }

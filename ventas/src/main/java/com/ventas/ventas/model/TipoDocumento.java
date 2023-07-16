@@ -28,6 +28,7 @@ public class TipoDocumento {
     @NotEmpty
     @Size(min=2,max=5)
     private String sigla;
+    // Relaciones
     @OneToMany(mappedBy = "tipodoc", fetch = FetchType.LAZY, cascade =
     CascadeType.ALL)
     private List<Cliente> clientes;
@@ -64,5 +65,7 @@ public class TipoDocumento {
     public void setClientes(List<Cliente> clientes) {
         this.clientes = clientes;
     }
+
     
+      
 }
