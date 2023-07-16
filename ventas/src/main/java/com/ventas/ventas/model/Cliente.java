@@ -2,12 +2,15 @@ package com.ventas.ventas.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
@@ -17,29 +20,35 @@ public class Cliente {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @NotEmpty
-    @Size(min=2,max=50)
+    @Size(min=2,max=20)
     @Column(length = 50,nullable=false)
     private String nombre;
     @NotEmpty
-    @Size(min=2,max=50)
+    @Size(min=2,max=20)
     private String apellido;
     @NotEmpty
     @Email
-    @Column(length=100, nullable=false)
+    @Column(length=80, nullable=false)
     private String email;
+    @NotNull
     @Column(length = 20)
-    private int telefono;
+    private Long telefono;
     @Column
     private Boolean estado;
+    @ManyToOne(fetch = FetchType.LAZY)
+    private TipoDocumento tipodoc;
     public Cliente() {
     }
-    public Cliente(int id, String nombre, String apellido, String email, int telefono, Boolean estado) {
+    public Cliente(Integer id, @NotEmpty @Size(min = 2, max = 20) String nombre,
+            @NotEmpty @Size(min = 2, max = 20) String apellido, @NotEmpty @Email String email, @NotNull Long telefono,
+            Boolean estado, TipoDocumento tipodoc) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
         this.email = email;
         this.telefono = telefono;
         this.estado = estado;
+        this.tipodoc = tipodoc;
     }
     public Integer getId() {
         return id;
@@ -65,10 +74,10 @@ public class Cliente {
     public void setEmail(String email) {
         this.email = email;
     }
-    public int getTelefono() {
+    public Long getTelefono() {
         return telefono;
     }
-    public void setTelefono(int telefono) {
+    public void setTelefono(Long telefono) {
         this.telefono = telefono;
     }
     public Boolean getEstado() {
@@ -77,9 +86,12 @@ public class Cliente {
     public void setEstado(Boolean estado) {
         this.estado = estado;
     }
-    public Cliente orElse(Object object) {
-        return null;
+    public TipoDocumento getTipodoc() {
+        return tipodoc;
     }
-   
+    public void setTipodoc(TipoDocumento tipodoc) {
+        this.tipodoc = tipodoc;
+    }
+    
 
 }
