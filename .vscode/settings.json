@@ -2,11 +2,17 @@
     "cSpell.words": [
         "accion",
         "addtipodoc",
+        "addvh",
         "cliented",
+        "clienteds",
+        "clientesreg",
+        "clientesv",
         "datat",
         "formtipdoc",
         "formtipodoc",
+        "formvehiculo",
         "Inactivar",
+        "listacl",
         "listatd",
         "nullable",
         "springframework",
@@ -17,10 +23,13 @@
         "tiposdocs",
         "vehiculo",
         "Vehiculo",
+        "vehiculoc",
         "vehiculos",
         "verc",
         "vertip",
         "vertipdoc",
-        "vertipodoc"
+        "vertipodoc",
+        "vervehiculo",
+        "vervhiculo"
     ]
 }

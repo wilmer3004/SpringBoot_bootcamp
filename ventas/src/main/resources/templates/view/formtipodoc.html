@@ -18,24 +18,21 @@
         
         <div class="title1 content-title" th:text="${accion}"></div>
         <br>
-        <form th:action="@{/tipodoc/add}" th:object="${tipodoc}"  method="post" style="width: 35rem;" class="mx-auto"> 
-            
-            
+        <form th:action="@{/tipodoc/add}" th:object="${tipodoc}" method="post" style="width: 35rem;" class="mx-auto"> 
             <div class="form-group">
-                <label for="nombre" class="word1">Nombre Tipo de documento</label>
+                <label for="nombre" class="word1">Nombre Tipo documento</label>
                 <br>
-                <input type="text" class="form-control" id="nombre" th:field="*{nombre}" >
+                <input type="text" class="form-control" id="nombre" th:field="*{nombre}">
                 <div class="form-text text-danger" th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}"></div>
             </div>
             <br>
             <div class="form-group">
-                <label for="siglas" class="word1">Siglas</label>
+                <label for="sigla" class="word1">Siglas</label>
                 <br>
                 <input type="text" class="form-control" id="sigla" th:field="*{sigla}">
                 <div class="form-text text-danger" th:if="${#fields.hasErrors('sigla')}" th:errors="*{sigla}"></div>
-                
             </div>
-            
+           
             <br>
             <div class="div-row" style="margin-left:0% !important;">
                 <button type="submit" class="btn btn-primary button2" style="margin-left:0% !important;">Guardar</button>

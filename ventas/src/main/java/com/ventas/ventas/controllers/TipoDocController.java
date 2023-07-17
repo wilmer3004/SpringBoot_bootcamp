@@ -1,5 +1,6 @@
 package com.ventas.ventas.controllers;
 
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,9 +32,9 @@ public class TipoDocController {
     @GetMapping("/tipodoc/form")
     public String formtipdoc(Model m) {
         TipoDocumento tipodoc = new TipoDocumento();
-        m.addAttribute("tipodoc", tipodoc);
-        m.addAttribute("accion", "Registrar Tipos de documentos");
-        return("view/formtipodoc");
+        m.addAttribute("tipodoc",tipodoc);
+        m.addAttribute("accion", "Registrar Tipo Documento");
+        return "view/formtipodoc";
     }
 
     @GetMapping(value="/tipodoc/form2/{id}")
@@ -55,11 +56,11 @@ public class TipoDocController {
         if(res.hasErrors()){
             return "view/formtipodoc";
         }
-        System.out.println(tipodoc);
         tipoDoc1.save(tipodoc);
         status.setComplete();
         return "redirect:/tipodoc/vertipodoc";
-    }
+}
+
 
     @GetMapping("/tipodoc/delete/{id}")
     public String delete(@PathVariable Integer id){

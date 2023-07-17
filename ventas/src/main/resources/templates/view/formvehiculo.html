@@ -11,52 +11,37 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/mobius1/vanilla-Datatables@latest/vanilla-dataTables.min.css">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/mobius1/vanilla-Datatables@latest/vanilla-dataTables.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    <title>Registrar Usuario</title>
+    <title>Registrar Tipos de documentos</title>
 </head>
 <body>
     <div class="container">
         
         <div class="title1 content-title" th:text="${accion}"></div>
         <br>
-        <form th:action="@{/add}" th:object="${cliente}" method="post" style="width: 35rem;" class="mx-auto"> 
+        <form th:action="@{/vehiculo/add}" th:object="${vehiculo}"  method="post" style="width: 35rem;" class="mx-auto"> 
             <div class="form-group">
-                <label for="tipodoc">Tipo documento</label>
-                <select id="tipodoc" th:field="*{tipodoc}" class="form-select" required>
-                <option th:each="td:${tiposdoc}" th:value="${td.id}" th:text="${td.nombre}">
+                <label for="cliente">Nombre Cliente</label>
+                <select id="cliente" th:field="*{cliente}" class="form-select" required>
+                <option th:each="cl:${clientesreg}" th:value="${cl.id}" th:text="${cl.nombre}" >
                 </option>
                 </select>
                 </div>
             
             <div class="form-group">
-                <label for="nombre" class="word1">Nombre</label>
+                <label for="nombreVehiculo" class="word1">Nombre Vehiculo</label>
                 <br>
-                <input type="text" class="form-control" id="nombre" th:field="*{nombre}">
-                <div class="form-text text-danger" th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}"></div>
+                <input type="text" class="form-control" id="nombre" th:field="*{nombreVehiculo}" >
+                <div class="form-text text-danger" th:if="${#fields.hasErrors('nombreVehiculo')}" th:errors="*{nombreVehiculo}"></div>
             </div>
             <br>
             <div class="form-group">
-                <label for="apellido" class="word1">Apellido</label>
+                <label for="placa" class="word1">Placa</label>
                 <br>
-                <input type="text" class="form-control" id="apellido" th:field="*{apellido}">
-                <div class="form-text text-danger" th:if="${#fields.hasErrors('apellido')}" th:errors="*{apellido}"></div>
+                <input type="text" class="form-control" id="placa" th:field="*{placa}">
+                <div class="form-text text-danger" th:if="${#fields.hasErrors('placa')}" th:errors="*{placa}"></div>
+                
             </div>
-            <br>
-            <div class="form-group">
-                <label for="email" class="word1">Email</label>
-                <input type="text" class="form-control" id="email" th:field="*{email}">
-                <div class="form-text text-danger" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
-            </div>
-            <br>
-            <div class="form-group">
-                <label for="telefono" class="word1">Teléfono</label>
-                <input type="text" class="form-control" id="telefono" th:field="*{telefono}">
-                <div class="form-text text-danger" th:if="${#fields.hasErrors('telefono')}" th:errors="*{telefono}"></div>
-            </div>
-            <br>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="estado" checked th:field="*{estado}">
-                <label class="form-check-label word1" for="estado" >Activo</label>
-            </div>
+            
             <br>
             <div class="div-row" style="margin-left:0% !important;">
                 <button type="submit" class="btn btn-primary button2" style="margin-left:0% !important;">Guardar</button>

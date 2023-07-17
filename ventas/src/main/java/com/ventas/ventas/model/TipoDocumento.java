@@ -22,7 +22,7 @@ public class TipoDocumento {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @NotEmpty
-    @Size(max=20,min=2)
+    @Size(min=2,max=20)
     @Column (length = 20, nullable=false)
     private String nombre;
     @NotEmpty
