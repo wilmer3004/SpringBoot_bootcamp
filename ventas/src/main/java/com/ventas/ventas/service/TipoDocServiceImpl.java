@@ -15,9 +15,6 @@ public class TipoDocServiceImpl implements ITipoDocService {
     public List<TipoDocumento> findAll() {
         return (List<TipoDocumento>) tipodocc.findAll();
     }
-
-    
-
     @Override
     public TipoDocumento findOne(Integer idtipodoc) {
         return tipodocc.findById(idtipodoc).orElse(null);

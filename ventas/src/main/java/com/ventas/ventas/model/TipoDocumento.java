@@ -1,5 +1,6 @@
 package com.ventas.ventas.model;
 
+
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -18,20 +19,24 @@ import javax.validation.constraints.Size;
 @Table(name="tipodocs")
 public class TipoDocumento {
     // Atributos
-    @Id
+@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idtipodoc;
+        private Integer idtipodoc;
+
     @NotEmpty
     @Size(min=2,max=20)
-    @Column (length = 20, nullable=false)
-    private String nombretipodoc;
+    @Column (length = 20,nullable = false)
+        private String nombretipodoc;
+
     @NotEmpty
     @Size(min=2,max=5)
-    private String sigla;
+    @Column (length = 5, nullable = false)
+        private String sigla;
+        
     // Relaciones
     @OneToMany(mappedBy = "tipodoc", fetch = FetchType.LAZY, cascade =
     CascadeType.ALL)
-    private List<Cliente> clientes;
+        private List<Cliente> clientes;
     public TipoDocumento() {
     }
     public TipoDocumento(Integer idtipodoc, @NotEmpty @Size(min = 2, max = 20) String nombretipodoc,
@@ -65,8 +70,7 @@ public class TipoDocumento {
     public void setClientes(List<Cliente> clientes) {
         this.clientes = clientes;
     }
-    
-    
+   
     
       
 }

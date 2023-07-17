@@ -23,6 +23,9 @@ public class Cliente {
      @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    @NotNull
+    @Column(length = 25)
+    private Long nident;
     @NotEmpty
     @Size(min=2,max=20)
     @Column(length = 50,nullable=false)
@@ -48,10 +51,11 @@ public class Cliente {
     public Cliente() {
     }
 
-    public Cliente(Integer id, @NotEmpty @Size(min = 2, max = 20) String nombre,
+    public Cliente(Integer id, @NotNull Long nident, @NotEmpty @Size(min = 2, max = 20) String nombre,
             @NotEmpty @Size(min = 2, max = 20) String apellido, @NotEmpty @Email String email, @NotNull Long telefono,
             Boolean estado, TipoDocumento tipodoc, List<Vehiculo> vehiculos) {
         this.id = id;
+        this.nident = nident;
         this.nombre = nombre;
         this.apellido = apellido;
         this.email = email;
@@ -67,6 +71,14 @@ public class Cliente {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Long getNident() {
+        return nident;
+    }
+
+    public void setNident(Long nident) {
+        this.nident = nident;
     }
 
     public String getNombre() {
@@ -124,5 +136,6 @@ public class Cliente {
     public void setVehiculos(List<Vehiculo> vehiculos) {
         this.vehiculos = vehiculos;
     }
+
     
 }

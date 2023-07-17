@@ -20,7 +20,7 @@
         <br>
         <form th:action="@{/vehiculo/add}" th:object="${vehiculo}"  method="post" style="width: 35rem;" class="mx-auto"> 
             <div class="form-group">
-                <label for="cliente">Nombre Cliente</label>
+                <label for="cliente" class="word1">Nombre Cliente</label>
                 <select id="cliente" th:field="*{cliente}" class="form-select" required>
                 <option th:each="cl:${clientesreg}" th:value="${cl.id}" th:text="${cl.nombre}" >
                 </option>

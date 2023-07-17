@@ -32,6 +32,7 @@
             <thead>
                 <th>Id</th>
                 <th>Tipo <br> Documento</th>
+                <th>Numero identificación</th>
                 <th>Nombre</th>
                 <th>Apellido</th>
                 <th>Email</th>
@@ -43,6 +44,7 @@
                 <tr th:if="${clientes.size()>0}" th:each="c:${clientes}">
                     <td th:text="${c.id}"></td>
                     <td th:text="${c.tipodoc.nombretipodoc}"></td>
+                    <td th:text="${c.nident}"></td>
                     <td th:text="${c.nombre}"></td>
                     <td th:text="${c.apellido}"></td>
                     <td th:text="${c.email}"></td>
@@ -53,12 +55,6 @@
                     <td th:if="${c.estado==false}"> 
                         <span class="badge bg-danger active">Inactivo</span> 
                     </td> 
-                    <td th:if="${c.estado==true}"> 
-                        <a rol="button" class="btn btn-danger btn-sm"> Inactivar </a> 
-                    </td> 
-                    <td th:if="${c.estado==false}"> 
-                        <a role="button" class="btn btn-success btn-sm"> Activar </a> 
-                    </td>
                     <td> 
                         <a role="button" class="btn btn-warning btn-sm" th:href="@{/cliente/form2/}+${c.id}"> 
                             <i class="bi bi-pencil"></i> 

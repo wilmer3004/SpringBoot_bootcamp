@@ -30,8 +30,9 @@
             <div class="form-group">
                 <label for="sigla" class="word1">Siglas</label>
                 <br>
-                <input type="text" class="form-control" id="sigla" th:field="*{sigla}">
-                <div class="form-text text-danger" th:if="${#fields.hasErrors('sigla')}" th:errors="*{sigla }"></div>
+                <input type="text" class="form-control" id="sigla" th:field="*{sigla}" >
+                <div class="form-text text-danger" th:if="${#fields.hasErrors('sigla')}" th:errors="*{sigla}"></div>
+
                 
             </div>
             
