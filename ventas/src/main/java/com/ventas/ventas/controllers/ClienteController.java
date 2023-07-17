@@ -72,6 +72,10 @@ public class ClienteController {
     @PostMapping("/add")
     public String add(@Valid Cliente cliente, BindingResult res, Model m, SessionStatus status) {
         if(res.hasErrors()){
+            List<TipoDocumento> listatd = tipodoc.findAll();
+            m.addAttribute("cliente", cliente);
+            m.addAttribute("tiposdoc", listatd);
+            m.addAttribute("accion", "Actualizar Cliente");
             return "view/form";
         }
         cliented.save(cliente);

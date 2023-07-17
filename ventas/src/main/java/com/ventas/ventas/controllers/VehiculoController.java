@@ -11,6 +11,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
 import com.ventas.ventas.model.Cliente;
@@ -19,6 +20,7 @@ import com.ventas.ventas.service.IClienteService;
 import com.ventas.ventas.service.IVehiculoService;
 
 @Controller
+@SessionAttributes("vehiculo")
 public class VehiculoController {
     @Autowired
     private IClienteService clienteds;
@@ -58,6 +60,10 @@ public class VehiculoController {
 @PostMapping("/vehiculo/add")
     public String addvh(@Valid Vehiculo vehiculo, BindingResult res, Model m, SessionStatus status) {
         if(res.hasErrors()){
+        List<Cliente> listacl = clienteds.findAll();
+        m.addAttribute("vehiculo",vehiculo);
+        m.addAttribute("clientesreg", listacl);
+        m.addAttribute("accion", "Registrar Vehiculo");
             return "view/formvehiculo";
         }
         vehiculoc.save(vehiculo);

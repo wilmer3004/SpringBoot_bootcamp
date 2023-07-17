@@ -22,7 +22,7 @@
             <div class="form-group">
                 <label for="tipodoc">Tipo documento</label>
                 <select id="tipodoc" th:field="*{tipodoc}" class="form-select" required>
-                <option th:each="td:${tiposdoc}" th:value="${td.id}" th:text="${td.nombre}">
+                <option th:each="td:${tiposdoc}" th:value="${td.idtipodoc}" th:text="${td.nombretipodoc}">
                 </option>
                 </select>
                 </div>

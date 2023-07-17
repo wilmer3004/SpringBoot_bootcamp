@@ -42,7 +42,7 @@
             <tbody>
                 <tr th:if="${clientes.size()>0}" th:each="c:${clientes}">
                     <td th:text="${c.id}"></td>
-                    <td th:text="${c.tipodoc.nombre}"></td>
+                    <td th:text="${c.tipodoc.nombretipodoc}"></td>
                     <td th:text="${c.nombre}"></td>
                     <td th:text="${c.apellido}"></td>
                     <td th:text="${c.email}"></td>

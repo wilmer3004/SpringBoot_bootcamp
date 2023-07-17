@@ -20,11 +20,11 @@ public class TipoDocumento {
     // Atributos
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Integer idtipodoc;
     @NotEmpty
     @Size(min=2,max=20)
     @Column (length = 20, nullable=false)
-    private String nombre;
+    private String nombretipodoc;
     @NotEmpty
     @Size(min=2,max=5)
     private String sigla;
@@ -34,24 +34,24 @@ public class TipoDocumento {
     private List<Cliente> clientes;
     public TipoDocumento() {
     }
-    public TipoDocumento(Integer id, @NotEmpty @Size(max = 20, min = 2) String nombre,
+    public TipoDocumento(Integer idtipodoc, @NotEmpty @Size(min = 2, max = 20) String nombretipodoc,
             @NotEmpty @Size(min = 2, max = 5) String sigla, List<Cliente> clientes) {
-        this.id = id;
-        this.nombre = nombre;
+        this.idtipodoc = idtipodoc;
+        this.nombretipodoc = nombretipodoc;
         this.sigla = sigla;
         this.clientes = clientes;
     }
-    public Integer getId() {
-        return id;
+    public Integer getIdtipodoc() {
+        return idtipodoc;
     }
-    public void setId(Integer id) {
-        this.id = id;
+    public void setIdtipodoc(Integer idtipodoc) {
+        this.idtipodoc = idtipodoc;
     }
-    public String getNombre() {
-        return nombre;
+    public String getNombretipodoc() {
+        return nombretipodoc;
     }
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombretipodoc(String nombretipodoc) {
+        this.nombretipodoc = nombretipodoc;
     }
     public String getSigla() {
         return sigla;
@@ -65,7 +65,8 @@ public class TipoDocumento {
     public void setClientes(List<Cliente> clientes) {
         this.clientes = clientes;
     }
-
+    
+    
     
       
 }
