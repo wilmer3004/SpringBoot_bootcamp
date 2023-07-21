@@ -24,13 +24,13 @@ public class TipoDocumento {
         private Integer idtipodoc;
 
     @NotEmpty
-    @Size(min=2,max=20)
-    @Column (length = 20,nullable = false)
+    @Size(min=2,max=40)
+    @Column (length = 40,nullable = false)
         private String nombretipodoc;
 
     @NotEmpty
-    @Size(min=2,max=5)
-    @Column (length = 5, nullable = false)
+    @Size(min=2,max=8)
+    @Column (length = 8, nullable = false)
         private String sigla;
         
     // Relaciones
@@ -39,8 +39,8 @@ public class TipoDocumento {
         private List<Cliente> clientes;
     public TipoDocumento() {
     }
-    public TipoDocumento(Integer idtipodoc, @NotEmpty @Size(min = 2, max = 20) String nombretipodoc,
-            @NotEmpty @Size(min = 2, max = 5) String sigla, List<Cliente> clientes) {
+    public TipoDocumento(Integer idtipodoc, @NotEmpty @Size(min = 2, max = 40) String nombretipodoc,
+            @NotEmpty @Size(min = 2, max = 8) String sigla, List<Cliente> clientes) {
         this.idtipodoc = idtipodoc;
         this.nombretipodoc = nombretipodoc;
         this.sigla = sigla;

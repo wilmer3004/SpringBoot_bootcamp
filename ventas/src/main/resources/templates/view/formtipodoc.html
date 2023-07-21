@@ -19,7 +19,9 @@
         <div class="title1 content-title" th:text="${accion}"></div>
         <br>
         <form th:action="@{/tipodoc/add}" th:object="${tipodoc}"  method="post" style="width: 35rem;" class="mx-auto"> 
-            
+            <div class="form-group">
+                <input type="text" class="form-control" id="idtipodoc" th:field="*{idtipodoc}" hidden>
+             </div>
             <div class="form-group">
                 <label for="nombretipodoc" class="word1">Nombre Tipo documento</label>
                 <br>
